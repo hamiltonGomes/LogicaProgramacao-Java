@@ -4,31 +4,44 @@ public class identificandoTriangulos {
 
     public static void main(String[] args) {
 
-        double A, B,C, X, Y, Z;
+        double A, B,C, AB, BC, CA;
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Digite o valor do primeiro lado: ");
+        System.out.println("Digite o valor do lado A: ");
         A = scan.nextDouble();
-        System.out.println("Digite o valor do segundo lado: ");
+        while (A<=0) {
+            System.out.println("O valor de A precisa ser maior que 0, por favor digite outro valor.");
+            System.out.println("Digite o valor do lado A: ");
+            A = scan.nextDouble();
+        }
+
+        System.out.println("Digite o valor do lado B: ");
         B = scan.nextDouble();
-        System.out.println("Digite o valor do terceiro lado: ");
+        while (B<=0) {
+            System.out.println("O valor de B precisa ser maior que 0, por favor digite outro valor.");
+            System.out.println("Digite o valor do lado B: ");
+            B = scan.nextDouble();
+        }
+
+        System.out.println("Digite o valor do lado C: ");
         C = scan.nextDouble();
-
-        X =  A+B;
-        Y = B+C;
-        Z = C+A;
-
-        if (A<Y || B<Z || C<X){
-            System.out.println("Os valores formam um triângulo.");
+        while (C<=0) {
+            System.out.println("O valor de C precisa ser maior que 0, por favor digite outro valor.");
+            System.out.println("Digite o valor do lado C: ");
+            C = scan.nextDouble();
         }
-        if (C<X){
-            System.out.println("Os valores formam um triângulo.");
-        }
-        if (B<Z){
-            System.out.println("Os valores formam um triângulo.");
+
+
+
+        AB =  A+B;
+        BC = B+C;
+        CA = C+A;
+
+        if (A>BC || B> CA || C> AB){
+            System.out.println("Os valores NÃO formam um triângulo.");
         }
         else {
-            System.out.println("Os valores não formam um triângulo.");
+            System.out.println("Os valores formam um triângulo.");
         }
 
     }

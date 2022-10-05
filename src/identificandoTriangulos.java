@@ -53,7 +53,7 @@ public class identificandoTriangulos {
                 System.out.println("Os valores formam um triângulo equilátero.");
             }
             else {
-                System.out.println("Os valores formam um triângulo equilátero.");
+                System.out.println("Os valores formam um triângulo isósceles.");
             }
         }
         else {

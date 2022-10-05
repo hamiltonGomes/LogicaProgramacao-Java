@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class logicaProgramacao {
+public class repeticaoWhile {
     public static void main(String[] args) {
 
         double nota1, nota2, media;

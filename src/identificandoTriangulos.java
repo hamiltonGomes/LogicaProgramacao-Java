@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class identificandoTriangulos {
+
     public static void main(String[] args) {
 
         double A, B,C, X, Y, Z;
@@ -31,5 +32,4 @@ public class identificandoTriangulos {
         }
 
     }
-
 }

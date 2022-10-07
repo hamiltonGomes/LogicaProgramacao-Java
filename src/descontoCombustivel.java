@@ -23,7 +23,7 @@ public class descontoCombustivel {
             System.out.println("2 - Abastecer informando o saldo que será convertido em combustível;");
             System.out.println("3 - Cancelar operação.");
             resposta2 = scan.nextInt();
-        } while (resposta2 == 1 || resposta2 != 2 || resposta2 != 3);
+        } while (resposta2 != 1 &&  resposta2 != 2 && resposta2 != 3);
 
         if (resposta2 == 1) {
             System.out.println("Deseja comprar quantos litros?");
@@ -57,24 +57,25 @@ public class descontoCombustivel {
                 litroCombustivel = (valor / 3.24);
 
                 if (litroCombustivel <= 20) {
-                    desconto = valor * 0.97;
-                    System.out.println("Você abastece " + litroCombustivel + " e ainda economiza R$ " + desconto);
+                    desconto = valor - (valor * 0.97);
+                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto)+ "!");
                 } else if (litroCombustivel > 20) {
-                    desconto = valor * 0.95;
-                    System.out.println("Você abastece " + litroCombustivel + " e ainda economiza R$ " + desconto);
+                    desconto = valor - (valor * 0.95);
+                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto)+ "!");
                 }
             } else if (resposta.equalsIgnoreCase("gasolina")) {
                 litroCombustivel = (valor / 4.02);
 
                 if (litroCombustivel <= 20) {
-                    desconto = valor * 0.96;
-                    System.out.println("Você abastece " + litroCombustivel + " e ainda economiza R$ " + desconto);
+                    desconto = valor - (valor * 0.96);
+                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto)+ "!");
                 } else if (litroCombustivel > 20) {
-                    desconto = valor * 0.94;
-                    System.out.println("Você abastece " + litroCombustivel + " e ainda economiza R$ " + desconto);
+                    desconto = valor - (valor * 0.94);
+                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto) + "!");
                 }
             }
-        } else if (resposta2 == 3) {
+        }
+        else if (resposta2 == 3) {
             System.out.println("Obrigado pelo contato, volte sempre!");
         } else {
             System.out.println("Valores inválidos, digite ");

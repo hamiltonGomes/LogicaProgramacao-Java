@@ -1,10 +1,12 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class descontoCombustivel {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat(".00");
 
-        String resposta = null;
+        String resposta;
         double litroCombustivel, etanol, gasolina;
 
         System.out.println("Qual tipo de combustível deseja comprar? (E/G)");
@@ -20,20 +22,20 @@ public class descontoCombustivel {
         // incrementar função para calcular a quantidade de litros pelo valor que o usuário deseja comprar
 
         if (resposta.equalsIgnoreCase("e")) {
-            if (litroCombustivel >= 20) {
+            if (litroCombustivel <= 20) {
                 etanol = (3.24 * 0.97) * litroCombustivel;
-                System.out.println("O total é de R$ " + etanol);
-            } else if (litroCombustivel < 20) {
+                System.out.println("O total é de R$ " + df.format(etanol));
+            } else if (litroCombustivel > 20) {
                 etanol = (3.24 * 0.95) * litroCombustivel;
-                System.out.println("O total é de R$ " + etanol);
+                System.out.println("O total é de R$ " + df.format(etanol));
             }
         } else if (resposta.equalsIgnoreCase("g")) {
-            if (litroCombustivel >= 20) {
+            if (litroCombustivel <= 20) {
                 gasolina = (4.02 * 0.96) * litroCombustivel;
-                System.out.println("O total é de R$ " + gasolina);
-            } else if (litroCombustivel < 20) {
+                System.out.println("O total é de R$ " + df.format(gasolina));
+            } else if (litroCombustivel > 20) {
                 gasolina = (4.02 * 0.94) * litroCombustivel;
-                System.out.println("O total é de R$ " + gasolina);
+                System.out.println("O total é de R$ " + df.format(gasolina));
             }
         } else {
             System.out.println("Valores inválidos.");

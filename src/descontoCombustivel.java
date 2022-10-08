@@ -23,10 +23,10 @@ public class descontoCombustivel {
             System.out.println("2 - Abastecer informando o saldo que será convertido em combustível;");
             System.out.println("3 - Cancelar operação.");
             resposta2 = scan.nextInt();
-                if (resposta2 != 1 &&  resposta2 != 2 && resposta2 != 3){
-                    System.out.println("O número digitado não é válido.");
-                }
-        } while (resposta2 != 1 &&  resposta2 != 2 && resposta2 != 3);
+            if (resposta2 != 1 && resposta2 != 2 && resposta2 != 3) {
+                System.out.println("O número digitado não é válido.");
+            }
+        } while (resposta2 != 1 && resposta2 != 2 && resposta2 != 3);
 
         if (resposta2 == 1) {
             System.out.println("Deseja comprar quantos litros?");
@@ -62,11 +62,11 @@ public class descontoCombustivel {
                 if (litroCombustivel <= 20) {
                     desconto = valor - (valor * 0.97);
                     valorDesconto = valor - desconto;
-                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto)+ "!" + " O valor total a ser pago é de R$ " + valorDesconto + ".");
+                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto) + "!" + " O valor total a ser pago é de R$ " + valorDesconto + ".");
                 } else if (litroCombustivel > 20) {
                     desconto = valor - (valor * 0.95);
                     valorDesconto = valor - desconto;
-                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto)+ "!" + " O valor total a ser pago é de R$ " + valorDesconto + ".");
+                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto) + "!" + " O valor total a ser pago é de R$ " + valorDesconto + ".");
                 }
             } else if (resposta.equalsIgnoreCase("gasolina")) {
                 litroCombustivel = (valor / 4.02);
@@ -74,15 +74,14 @@ public class descontoCombustivel {
                 if (litroCombustivel <= 20) {
                     desconto = valor - (valor * 0.96);
                     valorDesconto = valor - desconto;
-                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto)+ "!" + " O valor total a ser pago é de R$ " + valorDesconto + ".");
+                    System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto) + "!" + " O valor total a ser pago é de R$ " + valorDesconto + ".");
                 } else if (litroCombustivel > 20) {
                     desconto = valor - (valor * 0.94);
                     valorDesconto = valor - desconto;
                     System.out.println("Você abastece " + df.format(litroCombustivel) + "L e ainda economiza R$ " + df.format(desconto) + "!" + " O valor total a ser pago é de R$ " + valorDesconto + ".");
                 }
             }
-        }
-        else {
+        } else {
             System.out.println("Obrigado pelo contato, volte sempre!");
         }
     }
